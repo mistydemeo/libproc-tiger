@@ -25,6 +25,7 @@
 #include <sys/buf.h>
 #include <sys/proc.h>
 #include <mach/mach_types.h>
+#include <sys/proc_info.h>
 
 int proc_info_internal(int callnum, int pid, int flavor, uint64_t arg, user_addr_t buffer, uint32_t buffersize, register_t * retval);
 
