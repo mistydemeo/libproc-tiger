@@ -46,14 +46,4 @@ int proc_pidregioninfo(proc_t p, uint64_t arg, user_addr_t buffer, uint32_t buff
 int proc_pidregionpathinfo(proc_t p,  uint64_t arg, user_addr_t buffer, uint32_t buffersize, register_t *retval);
 int proc_pidvnodepathinfo(proc_t p,  uint64_t arg, user_addr_t buffer, uint32_t buffersize, register_t *retval);
 
-/* protos for proc_pidfdinfo calls */
-int pid_vnodeinfo(vnode_t vp, uint32_t vid, struct fileproc * fp, user_addr_t  buffer, uint32_t buffersize, register_t * retval);
-int pid_vnodeinfopath(vnode_t vp, uint32_t vid, struct fileproc * fp, user_addr_t  buffer, uint32_t buffersize, register_t * retval);
-int pid_socketinfo(socket_t  so, struct fileproc *fp, user_addr_t  buffer, uint32_t buffersize, register_t * retval);
-int pid_pseminfo(struct psemnode * psem, struct fileproc * fp,  user_addr_t  buffer, uint32_t buffersize, register_t * retval);
-int pid_pshminfo(struct pshmnode * pshm, struct fileproc * fp,  user_addr_t  buffer, uint32_t buffersize, register_t * retval);
-int pid_pipeinfo(struct pipe * p, struct fileproc * fp,  user_addr_t  buffer, uint32_t buffersize, register_t * retval);
-int pid_kqueueinfo(struct kqueue * kq, struct fileproc * fp,  user_addr_t  buffer, uint32_t buffersize, register_t * retval);
-int pid_atalkinfo(struct atalk  * at, struct fileproc * fp,  user_addr_t  buffer, uint32_t buffersize, register_t * retval);
-
 #endif /*_LIBPROC_H_ */
