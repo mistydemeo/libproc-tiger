@@ -27,23 +27,11 @@
 #include <mach/mach_types.h>
 #include <sys/proc_info.h>
 
-int proc_info_internal(int callnum, int pid, int flavor, uint64_t arg, user_addr_t buffer, uint32_t buffersize, register_t * retval);
-
-/* protos for proc_info calls */
-int proc_listpids(uint32_t type, uint32_t tyoneinfo, user_addr_t buffer, uint32_t buffersize, register_t * retval);
-int proc_pidinfo(int pid, int flavor, uint64_t arg, user_addr_t buffer, uint32_t buffersize, register_t * retval);
-int proc_pidfdinfo(int pid, int flavor,int fd, user_addr_t buffer, uint32_t buffersize, register_t * retval);
-int proc_kernmsgbuf(user_addr_t buffer, uint32_t buffersize, register_t * retval);
-
-/* protos for procpidinfo calls */
-int proc_pidfdlist(proc_t p, user_addr_t buffer, uint32_t buffersize, register_t *retval);
-int proc_pidbsdinfo(proc_t p, struct proc_bsdinfo *pbsd);
-int proc_pidtaskinfo(proc_t p, struct proc_taskinfo *ptinfo);
-int proc_pidallinfo(proc_t p, int flavor, uint64_t arg, user_addr_t buffer, uint32_t buffersize, register_t *retval);
-int proc_pidthreadinfo(proc_t p, uint64_t arg,  struct proc_threadinfo *pthinfo);
-int proc_pidlistthreads(proc_t p,  user_addr_t buffer, uint32_t buffersize, register_t *retval);
-int proc_pidregioninfo(proc_t p, uint64_t arg, user_addr_t buffer, uint32_t buffersize, register_t *retval);
-int proc_pidregionpathinfo(proc_t p,  uint64_t arg, user_addr_t buffer, uint32_t buffersize, register_t *retval);
-int proc_pidvnodepathinfo(proc_t p,  uint64_t arg, user_addr_t buffer, uint32_t buffersize, register_t *retval);
+int proc_listpids(uint32_t type, uint32_t typeinfo, void *buffer, int buffersize);
+int proc_pidinfo(int pid, int flavor, uint64_t arg,  void *buffer, int buffersize);
+int proc_pidfdinfo(int pid, int fd, int flavor, void * buffer, int buffersize);
+int proc_name(int pid, void * buffer, uint32_t buffersize);
+int proc_regionfilename(int pid, uint64_t address, void * buffer, uint32_t buffersize);
+int proc_kmsgbuf(void * buffer, uint32_t buffersize);
 
 #endif /*_LIBPROC_H_ */
