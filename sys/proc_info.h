@@ -553,16 +553,6 @@ struct proc_fdinfo {
 #define PROC_PIDFDATALKINFO_SIZE  (sizeof(struct appletalk_fdinfo))
 
 
-
-#ifdef XNU_KERNEL_PRIVATE
-extern int fill_socketinfo(socket_t so, struct socket_info *si);
-extern int fill_pshminfo(struct pshmnode * pshm, struct pshm_info * pinfo);
-extern int fill_pseminfo(struct psemnode * psem, struct psem_info * pinfo);
-extern int fill_pipeinfo(struct pipe * cpipe, struct pipe_info * pinfo);
-extern int fill_kqueueinfo(struct kqueue * kq, struct kqueue_info * kinfo);
-#endif /* XNU_KERNEL_PRIVATE */
-
-
 __END_DECLS
 
 #endif /*_SYS_PROC_INFO_H */
